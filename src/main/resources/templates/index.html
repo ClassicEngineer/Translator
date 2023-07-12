@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Translator</title>
+</head>
+<body>
+
+<form>
+<label for="text">Translate your text:</label>
+<input type="text" name="text" id="text" />
+
+<button type="submit">Submit</button>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+  const url = 'http://localhost:8080/api/v1/translator/translate'
+
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+
+    const value = data.get('text');
+
+    console.log({ value });
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+          text: value,
+          destination: "RU_EN"
+    }));
+
+  }
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', handleSubmit);
+
+
+</script>
+</body>
+</html>
