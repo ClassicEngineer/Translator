@@ -18,8 +18,7 @@ public class TranslateApplicationService {
     public String translate(String text, TranslationDestination destination) {
         return switch (destination) {
             case EN_RU -> translateService.translate(text, Language.EN, Language.RU);
-            case RU_EN -> translateService.translate(text, Language.RU, Language.EN);
-            default -> "ERROR, not implemented";
+            case RU_EN -> "ERROR, not implemented";
         };
 
     }

@@ -60,11 +60,11 @@ public class DictionaryLoader {
                 String[] engWords = row.get(i)[2].split(",");
 
                 for (String engWord: engWords) {
-                    enRuDict.putIfAbsent(engWord, ruWord);
+                    enRuDict.putIfAbsent(engWord.trim(), ruWord);
                 }
             }
             if (isHelloWorldEdition) {
-                enRuDict.put("Hello", "привет");
+                enRuDict.put("hello", "привет");
                 enRuDict.put("world", "мир");
 
             }
