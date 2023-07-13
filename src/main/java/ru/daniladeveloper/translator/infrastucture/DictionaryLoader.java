@@ -55,7 +55,7 @@ public class DictionaryLoader {
             .build()){
             List<String[]> row = reader.readAll();
             Map<String, String> enRuDict = new HashMap<>();
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < row.size(); i++) {
                 String ruWord = row.get(i)[0];
                 String[] engWords = row.get(i)[2].split(",");
 

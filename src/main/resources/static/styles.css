@@ -1,0 +1,15 @@
+.container {
+  font-family: arial, serif;
+  font-size: 24px;
+  width: 350px;
+  height: 200px;
+  outline: dashed 1px black;
+  margin: 10% auto;
+  padding: 10px;
+}
+
+p {
+  /* Center horizontally*/
+  text-align: center;
+}
+

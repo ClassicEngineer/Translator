@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Translator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<main>
+  <div class="container">
+    <div class="child">
+    <p>Translator</p>
+    <form>
+      <label for="text">Enter your text:</label>
+      <input type="text" name="text" id="text" />
+      <button type="submit">Translate</button>
+    </form>
+    </div>
+  </div>
+</main>
 
-<form>
-<label for="text">Translate your text:</label>
-<input type="text" name="text" id="text" />
 
-<button type="submit">Submit</button>
-</form>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -33,7 +42,7 @@
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
           text: value,
-          destination: "RU_EN"
+          destination: "EN_RU"
     }));
 
   }
