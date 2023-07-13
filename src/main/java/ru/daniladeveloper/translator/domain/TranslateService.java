@@ -26,7 +26,8 @@ public class TranslateService {
         for (String word : words) {
             for (DictionaryEntry entry : allById) {
                 if (word.equals(entry.getId())) {
-                    wordToTranslate.put(word, entry.getTranslation());
+                    wordToTranslate.put(word,
+                        Optional.ofNullable(entry.getTranslation()).orElse(word));
                     break;
                 }
             }
@@ -34,7 +35,7 @@ public class TranslateService {
 
         for (Token token : tokens) {
             if (token.isText()) {
-                result.append(wordToTranslate.get(token.getValue()));
+                result.append(Optional.ofNullable(wordToTranslate.get(token.getValue())).orElse(token.getValue()));
             } else {
                 result.append(token.getValue());
             }

@@ -32,7 +32,7 @@ public class DictionaryLoader {
     @Value("${dictionary.hello-world}")
     private Boolean isHelloWorldEdition = false;
 
-    @Value("classpath:dictionary/verbs.csv")
+    @Value("classpath:dictionary/dict.csv")
     private Resource resource;
 
     private final TranslateApplicationService translateService;
